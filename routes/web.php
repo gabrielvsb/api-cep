@@ -13,6 +13,10 @@
 |
 */
 
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/search/local/{ceps}',  ['uses' => 'ApiController@index']);
+});
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
